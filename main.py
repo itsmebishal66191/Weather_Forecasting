@@ -10,9 +10,9 @@ from streamlit_lottie import st_lottie
 # -------------------------
 import os
 
-API_KEY = os.getenv("WEATHER_API_KEY")
+API_KEY = st.secrets["weatherapi"]["key"]
 if not API_KEY:
-    st.error("API key not found! Please set WEATHER_API_KEY as an environment variable.")
+    st.error("API key not found! Please check secrets.toml")
 
 # -------------------------
 # Load Lottie animation
